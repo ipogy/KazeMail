@@ -1,0 +1,76 @@
+name: KazeMail Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v0.8.2)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & Publish GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Set up Rust stable toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: rust
+
+      - name: Ensure Gradle wrapper is executable
+        run: chmod +x gradlew
+
+      - name: Run Android & Rust tests and assemble APK
+        run: |
+          ./gradlew :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest --no-daemon --stacktrace
+          cargo test --manifest-path rust/Cargo.toml
+
+      - name: Prepare versioned APK asset
+        id: apk
+        run: |
+          VERSION_CODE=$(grep -E '^\s*versionCode\s*=' app/build.gradle.kts | head -n1 | sed -E 's/[^0-9]*([0-9]+).*/\1/')
+          VERSION_NAME=$(grep -E '^\s*versionName\s*=' app/build.gradle.kts | head -n1 | sed -E 's/.*"(.*)".*/\1/')
+          if [ -z "$VERSION_CODE" ] || [ -z "$VERSION_NAME" ]; then
+            echo "Failed to parse versionCode or versionName from app/build.gradle.kts"
+            exit 1
+          fi
+          BUILD_DATE=$(TZ='Asia/Tokyo' date +%Y%m%d)
+          ASSET_NAME="KazeMail-v${VERSION_NAME}+b${VERSION_CODE}-debug-${BUILD_DATE}.apk"
+          mkdir -p dist
+          cp app/build/outputs/apk/debug/app-debug.apk "dist/${ASSET_NAME}"
+          echo "asset_path=dist/${ASSET_NAME}" >> "$GITHUB_OUTPUT"
+          echo "version_name=${VERSION_NAME}" >> "$GITHUB_OUTPUT"
+          echo "version_code=${VERSION_CODE}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ASSET_PATH: ${{ steps.apk.outputs.asset_path }}
+          VERSION_CODE: ${{ steps.apk.outputs.version_code }}
+          INPUT_TAG: ${{ github.event.inputs.tag }}
+        run: |
+          TAG="${INPUT_TAG:-$GITHUB_REF_NAME}"
+          gh release create "$TAG" "$ASSET_PATH" \
+            --title "KazeMail ${TAG} (+b${VERSION_CODE})" \
+            --generate-notes

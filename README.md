@@ -37,4 +37,5 @@
 ## GitHub 開発フロー
 
 - 機能追加・不具合修正は `main` から `feat/...` や `fix/...` ブランチを作成して実装し、Pull Request でレビュー・CI チェック（`.github/workflows/android-ci.yml`）を通してマージします。
-- 変更完了後はテスト・デバッグ APK ビルドを確認し、Google Drive 配布用フォルダ（および必要に応じ GitHub Releases）へ出力します。
+- リリース時は `app/build.gradle.kts` の `versionName` / `versionCode` を確認したうえで `v*` タグ（例: `v0.8.2`）をプッシュすると、`.github/workflows/release.yml` がテスト実行後に APK を添付した GitHub Release を自動公開します。
+- 変更完了後はテスト・デバッグ APK ビルドを確認し、Google Drive 配布用フォルダへもアップロードします。
