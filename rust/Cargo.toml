@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "kazemail-core",
+    "uniffi-bindgen",
+]
+
+[patch.crates-io]
+imap = { path = "vendor/imap" }
+imap-proto = { path = "vendor/imap-proto" }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Subtle shadow -->
+    <path android:pathData="M48.7,41.8 L77.1,41.8 A4.8,4.8 0 0,1 81.9,46.6 L81.9,66.0 A4.8,4.8 0 0,1 77.1,70.8 L48.7,70.8 A4.8,4.8 0 0,1 43.9,66.0 L43.9,46.6 A4.8,4.8 0 0,1 48.7,41.8 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="44"
+                android:startY="42"
+                android:endX="82"
+                android:endY="71"
+                android:type="linear">
+                <item android:color="#40021E29" android:offset="0.0" />
+                <item android:color="#1A021E29" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Smooth aerodynamic Kaze breeze trails -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M28.5,45.0 Q33.5,43.4 38.8,43.7"
+        android:strokeWidth="2.9"
+        android:strokeColor="#FFCBE8F5"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24.2,54.4 Q31.0,52.6 38.8,53.0"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FF7FD3F4"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29.8,63.4 Q34.2,62.0 38.8,62.2"
+        android:strokeWidth="2.8"
+        android:strokeColor="#FF46BBE8"
+        android:strokeLineCap="round" />
+
+    <!-- Crisp white envelope body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M47.3,39.5 L75.7,39.5 A4.8,4.8 0 0,1 80.5,44.3 L80.5,63.7 A4.8,4.8 0 0,1 75.7,68.5 L47.3,68.5 A4.8,4.8 0 0,1 42.5,63.7 L42.5,44.3 A4.8,4.8 0 0,1 47.3,39.5 Z" />
+
+    <!-- Top ice-sky flap fill aligned cleanly with rounded corners & V-flap -->
+    <path
+        android:fillColor="#FFE2F4FC"
+        android:pathData="M47.3,39.5 L75.7,39.5 A4.8,4.8 0 0,1 79.4,41.6 L61.5,55.3 L43.6,41.6 A4.8,4.8 0 0,1 47.3,39.5 Z" />
+
+    <!-- Subtle bottom fold creases -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M45.6,65.4 L55.2,54.6"
+        android:strokeWidth="1.9"
+        android:strokeColor="#FFC6E4F1"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M77.4,65.4 L67.8,54.6"
+        android:strokeWidth="1.9"
+        android:strokeColor="#FFC6E4F1"
+        android:strokeLineCap="round" />
+
+    <!-- Crisp maritime teal V-flap line -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M44.5,41.9 L61.5,55.3 L78.5,41.9"
+        android:strokeWidth="2.8"
+        android:strokeColor="#FF0B556B"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

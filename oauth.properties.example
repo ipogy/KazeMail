@@ -1,0 +1,7 @@
+# KazeMail OAuth2 Client ID 設定テンプレート
+# このファイルを同階層の `oauth.properties` へコピー（または既に存在する oauth.properties を編集）し、
+# 取得した各プロバイダの Client ID を記入してからビルドしてください。
+
+GMAIL_OAUTH_CLIENT_ID=
+OUTLOOK_OAUTH_CLIENT_ID=
+OUTLOOK_CONSUMERS_OAUTH_CLIENT_ID=

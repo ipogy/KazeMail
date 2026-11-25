@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Breeze trails -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M28.5,45.0 Q33.5,43.4 38.8,43.7"
+        android:strokeWidth="2.9"
+        android:strokeColor="#FF000000"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M24.2,54.4 Q31.0,52.6 38.8,53.0"
+        android:strokeWidth="3.5"
+        android:strokeColor="#FF000000"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29.8,63.4 Q34.2,62.0 38.8,62.2"
+        android:strokeWidth="2.8"
+        android:strokeColor="#FF000000"
+        android:strokeLineCap="round" />
+
+    <!-- Crisp envelope with cut-out V-flap cleanly inset inside rounded corners -->
+    <path
+        android:fillColor="#FF000000"
+        android:fillType="evenOdd"
+        android:pathData="M47.3,39.5 L75.7,39.5 A4.8,4.8 0 0,1 80.5,44.3 L80.5,63.7 A4.8,4.8 0 0,1 75.7,68.5 L47.3,68.5 A4.8,4.8 0 0,1 42.5,63.7 L42.5,44.3 A4.8,4.8 0 0,1 47.3,39.5 Z M45.4,41.2 L61.5,53.9 L77.6,41.2 L79.4,43.4 L61.5,57.6 L43.6,43.4 Z" />
+</vector>

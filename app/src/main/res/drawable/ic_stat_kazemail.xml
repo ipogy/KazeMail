@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- KazeMail breeze trails -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M3.4,8.1 Q5.2,7.4 7.1,7.6"
+        android:strokeWidth="1.25"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M1.9,12.2 Q4.3,11.4 7.1,11.6"
+        android:strokeWidth="1.45"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M3.9,16.0 Q5.5,15.4 7.1,15.5"
+        android:strokeWidth="1.25"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round" />
+
+    <!-- KazeMail envelope silhouette with bold V-flap cutout for status bar clarity -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M10.1,5.8 L20.5,5.8 A1.6,1.6 0 0,1 22.1,7.4 L22.1,16.6 A1.6,1.6 0 0,1 20.5,18.2 L10.1,18.2 A1.6,1.6 0 0,1 8.5,16.6 L8.5,7.4 A1.6,1.6 0 0,1 10.1,5.8 Z M9.3,6.4 L15.3,12.1 L21.3,6.4 L21.9,7.6 L15.3,13.8 L8.7,7.6 Z" />
+</vector>

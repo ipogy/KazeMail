@@ -1,0 +1,26 @@
+[package]
+name = "kazemail-core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "kazemail_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+uniffi = "0.32.2"
+imap = { version = "3.0.0-alpha.15", default-features = false }
+imap-proto = "0.16"
+mail-parser = { version = "1.0.1", features = ["full_encoding"] }
+encoding_rs = "0.8.44"
+zstd = { version = "0.14.4", default-features = false, features = ["arrays"] }
+thiserror = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.22"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12"] }
+rustls-connector = { version = "0.22", default-features = false, features = ["webpki-roots-certs"] }
+
+[dev-dependencies]
+tempfile = "3.19"

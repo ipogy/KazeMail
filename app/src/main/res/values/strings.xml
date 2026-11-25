@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KazeMail</string>
+    <string name="sync_channel_name">メールバックグラウンド同期</string>
+    <string name="sync_notification_starting">受信トレイを同期しています…</string>
+    <string name="sync_cancel">一時停止</string>
+    <string name="new_mail_channel_name">新着メール通知</string>
+    <string name="new_mail_channel_desc">バックグラウンド差分同期で検出した新着受信メールの通知</string>
+</resources>

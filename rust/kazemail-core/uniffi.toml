@@ -1,0 +1,3 @@
+[bindings.kotlin]
+package_name = "com.kazemail.core.uniffi"
+cdylib_name = "kazemail_core"
